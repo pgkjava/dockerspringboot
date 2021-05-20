@@ -9,3 +9,15 @@ before_install:
 
 script:
   - docker run -e CI=true pgkjava/dockerspringboot gradle build
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'dockerspringboot'
+  env: 'Dockerspringboot-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-022308713620'
+  bucket_path: 'dockerspringboot'
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
