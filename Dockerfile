@@ -7,4 +7,4 @@ COPY build.gradle settings.gradle $APP_HOME
 COPY src src
 
 EXPOSE 5000
-RUN gradle bootRun
+CMD ["gradle", "bootRun"]
