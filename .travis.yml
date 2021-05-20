@@ -7,8 +7,8 @@ services:
 before_install:
   - docker build -t pgkjava/dockerspringboot .
 
-#script:
-#  - docker run -e CI=true pgkjava/dockerspringboot gradle build
+script:
+  - docker run -e CI=true pgkjava/dockerspringboot gradle build
 
 deploy:
   provider: elasticbeanstalk
